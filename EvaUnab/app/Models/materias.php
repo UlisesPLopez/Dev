@@ -8,7 +8,7 @@ class Materias extends Model{
     protected $fillable = ['nombre','codigo'];
 
     public function Estudiantes(){
-        return $this->belongsToMany(Estudiantes::class, 'matriculas', 'id_estudiante', 'id_materia')
+        return $this->belongsToMany(estudiante::class, 'matriculas', 'id_estudiante', 'id_materia')
             ->withPivot('fecha');
     }
 }
